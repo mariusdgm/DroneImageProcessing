@@ -1,3 +1,4 @@
+# TCP connection with Labview VI
 # import the necessary packages
 import numpy as np
 import pygame
@@ -33,7 +34,7 @@ stringToSend = ' '
 
 while not crashed:
 
-	
+
 	#cmnd = conn.recv(1) #Default command packet
 
 
