@@ -30,14 +30,14 @@ clock = pygame.time.Clock()
 crashed = False
 dataToSend = 0
 otherEvent = False
-stringToSend = ' '
+stringToSend = ''
 
 
 while not crashed:
 
 
-	#cmnd = conn.recv(1) #Default command packet
-
+	cmnd = conn.recv(7) #Default command packet
+	print(cmnd)
 
 
 	#Python controll part
@@ -129,6 +129,7 @@ while not crashed:
 
 	if otherEvent:
 		conn.sendall(stringToSend.encode('utf-8'))
+		conn.sendall(b'X') #padding byte
 		time.sleep(0.1)
 		otherEvent = False
 	else:
